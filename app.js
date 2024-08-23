@@ -6,6 +6,11 @@ const path = require('path');
 
 const app = express();
 
+//importing routes
+const homeRoutes = require('./routes/homeRoutes');
+const loRoutes = require('./routes/learningObectiveRoutes');
+
+
 // Body Parser Middleware
 app.use(bodyParser.urlencoded({ extended: false }));
 
@@ -16,10 +21,13 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-// Home Route
-app.get('/', (req, res) => {
-  res.render('home');
-});
+app.use(homeRoutes);
+app.use(loRoutes);
+
+// // Home Route
+// app.get('/', (req, res) => {
+//   res.render('home');
+// });
 
 // Start Server
 app.listen(3000, () => {

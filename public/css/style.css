@@ -268,3 +268,63 @@ nav a:hover {
   display: none;
 }
 
+
+/* Styling the table container */
+#table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+/* Styling the project table */
+#project-table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px; /* Add space between table and buttons */
+}
+
+#project-table th, 
+#project-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #2c3e50;
+}
+
+#project-table th {
+  background-color: #35495e;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#project-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+#project-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Styling the toggle buttons */
+.toggle-details {
+  background: none;
+  border: none;
+  font-size: 18px;
+  cursor: pointer;
+  color: #35495e;
+}
+
+/* Initially hide the project details rows */
+.project-details {
+  display: none;
+}
