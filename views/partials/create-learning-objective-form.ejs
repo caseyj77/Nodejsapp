@@ -1,0 +1,39 @@
+<div class="form-section-container">
+    <div class="form-section">
+        <div class="user-form">
+            <h1>Learning Objective Generator</h1>
+            <form id="lo-form">
+                <label for="lo-type">LO Type</label>
+                <select id="lo-type" name="lo-type" required>
+                    <option value="TLO">Terminal Learning Objective (TLO)</option>
+                    <option value="ELO">Enabling Learning Objective (ELO)</option>
+                </select>
+                
+                <label for="lo-id">LO ID</label>
+                <input type="text" id="lo-id" name="lo-id" required>
+              
+                <label for="audience">Audience</label>
+                <input type="text" id="audience" name="audience" required>
+                
+                <label for="behavior">Behavior</label>
+                <input type="text" id="behavior" name="behavior" required>
+                
+                <label for="conditions">Conditions</label>
+                <input type="text" id="conditions" name="conditions" required>
+                
+                <label for="degree">Degree</label>
+                <input type="text" id="degree" name="degree" required> 
+                <button type="submit">Submit</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="form-section hidden">
+        <div class="user-form" id="LO-output">
+            <h2>Generated Learning Objectives</h2>
+            <ol id="lo-list">
+                <!-- Generated LOs will be inserted here -->
+            </ol>
+        </div>
+    </div>
+</div>
