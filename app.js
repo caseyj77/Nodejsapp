@@ -8,7 +8,7 @@ const app = express();
 
 //importing routes
 const homeRoutes = require('./routes/homeRoutes');
-const loRoutes = require('./routes/learningObectiveRoutes');
+const loRoutes = require('./routes/learningObjectiveRoutes');
 
 
 // Body Parser Middleware
@@ -21,13 +21,10 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.use(homeRoutes);
-app.use(loRoutes);
+// Use the routes with specific base paths
+app.use('/', homeRoutes); // Home routes
+app.use('/learning-objectives', loRoutes); // Learning Objectives routes
 
-// // Home Route
-// app.get('/', (req, res) => {
-//   res.render('home');
-// });
 
 // Start Server
 app.listen(3000, () => {

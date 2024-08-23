@@ -1,0 +1,5 @@
+<!-- Example: views/somePage.ejs -->
+<%- include('partials/header', { title: 'Learning Objectives' }) %>
+<%- include('partials/navigation') %>
+<%- include('partials/content', { content: include('partials/learning-objective-list') }) %>
+<%- include('partials/footer') %>

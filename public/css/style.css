@@ -328,3 +328,78 @@ nav a:hover {
 .project-details {
   display: none;
 }
+
+/* Styling the table container */
+#table-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  padding: 20px;
+}
+
+/* Styling the table */
+#lo-table {
+  width: 100%;
+  max-width: 800px;
+  border-collapse: collapse;
+  background-color: #ffffff;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+  border-radius: 10px;
+  overflow: hidden;
+  margin-bottom: 10px; /* Add space between table and buttons */
+}
+
+#lo-table th, 
+#lo-table td {
+  padding: 15px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+  color: #2c3e50;
+}
+
+#lo-table th {
+  background-color: #35495e;
+  color: white;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+}
+
+#lo-table tr:hover {
+  background-color: #f1f1f1;
+}
+
+#lo-table tr:last-child td {
+  border-bottom: none;
+}
+
+/* Styling the button container */
+.button-container {
+  width: 100%;
+  max-width: 800px;
+  display: flex;
+  justify-content: flex-start;
+}
+
+/* Styling the buttons */
+.button-container button {
+  padding: 10px 20px;
+  background-color: #35495e;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-right: 10px;
+}
+
+.button-container button:hover {
+  background-color: #42b883;
+}
+
+.button-container button:last-child {
+  margin-right: 0;
+}
