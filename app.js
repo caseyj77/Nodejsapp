@@ -3,15 +3,7 @@
 const express = require('express');
 const bodyParser = require('body-parser');
 const path = require('path');
-const { Sequelize } = require('sequelize');
-const config = require('./config/config.js'); // Import the Sequelize configuration
-
-const env = process.env.NODE_ENV || 'development';
-const sequelizeConfig = config[env]; // Get the config for the current environment
-const sequelize = new Sequelize(sequelizeConfig.database, sequelizeConfig.username, sequelizeConfig.password, {
-  host: sequelizeConfig.host,
-  dialect: sequelizeConfig.dialect,
-});
+const sequelize = require('./util/database'); // Import the Sequelize instance
 
 const app = express();
 
@@ -40,6 +32,15 @@ app.use((req, res, next) => {
   res.status(404).render('404', { pageTitle: 'Page Not Found', path: '' });
 });
 
+
+console.log('DB_USER:', process.env.DB_USER);
+console.log('DB_PASSWORD:', process.env.DB_PASSWORD);
+console.log('DB_NAME:', process.env.DB_NAME);
+console.log('DB_HOST:', process.env.DB_HOST);
+console.log('DB_PORT:', process.env.DB_PORT);
+
+
+
 // Syncing Database and Starting the Server
 sequelize
   .sync() // Use .sync({ force: true }) during development to reset the database
@@ -51,3 +52,5 @@ sequelize
   .catch(err => {
     console.error('Failed to connect to the database:', err);
   });
+
+
