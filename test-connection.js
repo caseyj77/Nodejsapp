@@ -1,7 +1,7 @@
 const { Sequelize } = require('sequelize');
 
 const sequelize = new Sequelize('learning_management_db', 'casey', 'plmPLM11##', {
-    host: 'localhost',  // or try the actual IP address
+    host: '0.0.0.0',  // or try the actual IP address
     dialect: 'mysql',
     port: 3306,
   });
